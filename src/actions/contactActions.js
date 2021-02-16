@@ -17,7 +17,7 @@ export const addContact = (contact) => dispatch => {
 
 export const deleteContact = (id) => dispatch => {
     axios
-        .delete(`http://localhost:5000/api/contacts/${id}`)
+        .delete(`${http.http}/api/contacts/${id}`)
         .then((res) => dispatch({type: DELETE_CONTACT, payload: id}))
 }
 
