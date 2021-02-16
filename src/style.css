@@ -1,0 +1,381 @@
+html, body{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 21% 6% auto 6%;
+    height: 100%;
+}
+
+.header{
+    background-color: black;
+    text-align: center;
+    grid-row: 1;
+}
+
+.headerlink:link, .headerlink:visited{
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.icon{
+    object-fit:contain;
+    max-height: 100%;
+    width: 5em;
+    display: block;
+    margin: 0 auto;
+ }
+
+ .navbar{
+    grid-row: 2;
+    background-color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+.navlink:link, .navlink:visited{
+    color: white;
+    text-decoration: none;
+    padding: 1%;
+}
+.navlink:hover, .navlink:active{
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+}
+
+.index-content{
+    grid-row: 3;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 30% auto 30% auto 30%;
+    grid-template-rows: 7% auto;
+}
+
+.index-content-heading, .index-content-description{
+    grid-column: 1/6;
+}
+
+.more:link, .more:visited{
+    color: blue;
+    text-decoration: underline;
+}
+.more:hover, .more:active{
+    text-decoration: underline;
+}
+
+.demo {
+    transition: transform 0.25s ease;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.demo:hover {
+    -webkit-transform: scale(2); /* or some other value */
+    transform: scale(2);
+    box-shadow: none;
+    border: 1px solid black;
+}
+
+.plans-content, .about-content, .contact-content{
+    grid-row: 3;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.plans-build-table{
+    display: block; 
+    margin: 0 auto;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    width: 100%;
+}
+
+th{
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    text-align: left;
+    margin-left: 1%;
+    padding: 8px;
+}
+
+td{
+    text-align: left;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    padding: 8px;
+}
+
+.middle{
+    text-align: center;
+}
+
+.table-bg {
+    background-color: #f3f3f3;
+}
+
+button{
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+
+button:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.plans-build-mobile{
+    display: none;
+    visibility: hidden;
+}
+
+.plans-build-mobile-table{
+    -webkit-box-shadow:inset 0px 0px 0px 2px black;
+    -moz-box-shadow:inset 0px 0px 0px 2px black;
+    box-shadow:inset 0px 0px 0px 2px black;
+}
+
+.basic,.standard,.premium,.small,.medium,.large{
+    font-size: 12px;
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: left;
+}
+
+.show{
+    display: block;
+    visibility: visible;
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+.plans-mobile-button-inline{
+    display: inline;
+}
+
+.plans-mobile-button{
+    width: 33%;
+    height: auto;
+    padding: 3%;
+    border-radius: 0px;
+    color: #888888;
+    border: 1px solid #888888;
+    border-top: 2px solid black;
+    border-bottom: 2px solid #888888;
+    background-color: #dddddd;
+}
+
+.plans-mobile-button.active{
+    -webkit-box-shadow:inset 0px -4px 0px 0px black;
+    -moz-box-shadow:inset 0px -4px 0px 0px black;
+    box-shadow:inset 0px 0px -4px 0px black;
+    width: 33%;
+    height: auto;
+    padding: 3%;
+    border-radius: 0px;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+  
+.services{
+    width: 50%; 
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-img {
+    max-width: 50%;
+    height: auto;
+}
+
+hr{
+    width: 0;
+    height: 100%;
+}
+
+.contact-content-description{
+    display: grid;
+    text-align: left;
+    grid-template-columns: 45% 10% 45%;
+    width: 75%;
+    margin: 0 auto;
+    height: 75%;
+}
+
+form, input, textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    width: 100%;
+}
+
+::placeholder{
+    font-style: italic;
+}
+
+input{
+    width: 50%;
+}
+
+textarea{
+    width: 75%;
+    height: 200px;
+}
+
+.contact-display{
+    border-bottom: 1px dotted black;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.contact-display label {
+    font-weight: bold;
+}
+
+.contact-display p {
+    margin-left: 1%;
+}
+
+.delete-contact{
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+    float: right;
+    margin-right: 1%;
+}
+
+.maps{
+    grid-column: 1/3;
+    margin-bottom: 1%;
+}
+
+.call{
+    visibility: hidden;
+    display: none;
+}
+
+.footer{
+    color: white;
+    grid-row: 4;
+    font-size: 12px;
+    background-color: black;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .index-content{
+        grid-row: 3;
+        text-align: center;
+        font-size: 14px;
+        width: 75%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    
+    .index-content-heading{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .index-content-description{
+        grid-column: 1;
+    }
+
+    img {
+        max-width: 75%;
+        height: auto;
+    }
+
+    .icon{
+        object-fit:contain;
+        max-height: 100%;
+        width: 4em; 
+        display: block;
+        margin: auto auto;
+     }
+
+    .about-img {
+        max-width: 75%;
+        height: auto;
+    }
+
+    .plans-build{
+        display: none;
+        visibility: hidden;
+    }
+
+    .plans-build-mobile{
+        display: block;
+        visibility: visible;
+    }
+
+    .services{
+        width: 100%; 
+    }
+
+    .form{
+        display: none;
+        visibility: hidden;
+    }
+
+    hr{
+        display: none;
+        visibility: hidden;
+    }
+
+    .contact-content-description{
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-rows: auto;
+        text-align: left;
+    }
+
+    .maps{
+        grid-column: 1;
+    }
+
+    .call{
+        color: black;
+        visibility: visible;
+        text-decoration: none;
+        display: inline;
+    }
+
+    .mobile{
+        display: none;
+        visibility: hidden;
+    }
+}
