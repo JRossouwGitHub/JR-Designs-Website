@@ -1,16 +1,17 @@
 import axios from 'axios'
 import {GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT, CONTACTS_LOADING} from './types'
+import http from '../../config/route'
 
 export const getContacts = () => dispatch => {
     dispatch(setContactsLoading())
     axios
-        .get('http://localhost:5000/api/contacts')
+        .get(`${http.http}/api/contacts`)
         .then((res) => dispatch({type: GET_CONTACTS, payload: res.data}))
 }
 
 export const addContact = (contact) => dispatch => {
     axios
-        .post('http://localhost:5000/api/contacts', contact)
+        .post(`${http.http}/api/contacts`, contact)
         .then((res) => dispatch({type: ADD_CONTACT, payload: res.data}))
 }
 
