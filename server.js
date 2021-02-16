@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require ('mongoose');
 const bodyParser = require('body-parser');
 const Contacts = require('./routes/api/Contacts');
-const path = require('path')
+const path = require('path');
+const indexFile = require('./dist/index.html')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,7 +23,7 @@ if(process.env.NODE_ENV === 'production'){
     app.use(express.static('dist'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+        res.sendFile(indexFile)
     });
 }
 
