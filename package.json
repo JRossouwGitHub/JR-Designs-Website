@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "client": "webpack serve --mode development --open --hot",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install client && npm run build client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "author": "Jacques Rossouw",
   "license": "MIT",

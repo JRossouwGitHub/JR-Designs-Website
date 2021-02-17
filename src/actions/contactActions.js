@@ -7,21 +7,21 @@ import http from '../../config/route'
 export const getContacts = () => (dispatch, getState) => {
     dispatch(setContactsLoading())
     axios
-        .get(`${http.http}:5000/api/contacts`, tokenConfig(getState))
+        .get(`${http.http}/api/contacts`, tokenConfig(getState))
         .then((res) => dispatch({type: GET_CONTACTS, payload: res.data}))
         .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)))
 }
 
 export const addContact = (contact) => dispatch => {
     axios
-        .post(`${http.http}:5000/api/contacts`, contact)
+        .post(`${http.http}/api/contacts`, contact)
         .then((res) => dispatch({type: ADD_CONTACT, payload: res.data}))
         .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)))
 }
 
 export const deleteContact = (id) => dispatch => {
     axios
-        .delete(`${http.http}:5000/api/contacts/${id}`, tokenConfig(getState))
+        .delete(`${http.http}/api/contacts/${id}`, tokenConfig(getState))
         .then((res) => dispatch({type: DELETE_CONTACT, payload: id}))
         .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)))
 }
