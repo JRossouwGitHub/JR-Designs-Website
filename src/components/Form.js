@@ -75,11 +75,6 @@ const Form = (props) => {
         props.login(details)
 
         setPassword('')
-
-        if(errorL){
-            return null
-        }
-        props.props.history.push('/')
     } 
 
     const _signup = (e) => {
@@ -96,11 +91,6 @@ const Form = (props) => {
         setName('')
         setEmail('')
         setPassword('')
-
-        if(errorS){
-            return null
-        }
-        props.props.history.push('/')
     } 
 
     return (
