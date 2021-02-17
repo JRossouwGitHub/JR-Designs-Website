@@ -76,6 +76,9 @@ const Form = (props) => {
 
         setPassword('')
 
+        if(errorL){
+            return null
+        }
         props.props.history.push('/')
     } 
 
@@ -94,6 +97,9 @@ const Form = (props) => {
         setEmail('')
         setPassword('')
 
+        if(errorS){
+            return null
+        }
         props.props.history.push('/')
     } 
 
