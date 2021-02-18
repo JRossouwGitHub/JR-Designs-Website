@@ -7,7 +7,7 @@ function auth(req, res, next){
 
     if(!token){
         //return res.status(401).json({msg: 'No token, authorization denied'})
-        return res.status(401).redirect('/')
+        return res.status(401).redirect(`${http}`)
     }
 
     try{
