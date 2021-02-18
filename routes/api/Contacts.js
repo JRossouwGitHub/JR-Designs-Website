@@ -17,8 +17,8 @@ Router.use(function(req, res, next) {
 // @access Private
 Router.get('/', auth, (req, res) => {
     Contact.find()
-        .sort({date: 1})
-        .then(contacts => res.json(contacts))
+    .sort({date: 1})
+    .then(contacts => res.json(contacts))
 });
 
 // @route  POST api/contacts
