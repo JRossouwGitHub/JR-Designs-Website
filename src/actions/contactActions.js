@@ -19,7 +19,7 @@ export const addContact = (contact) => dispatch => {
         .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)))
 }
 
-export const deleteContact = (id) => dispatch => {
+export const deleteContact = (id) => (dispatch, getState) => {
     axios
         .delete(`${http.http}/api/contacts/${id}`, tokenConfig(getState))
         .then((res) => dispatch({type: DELETE_CONTACT, payload: id}))
