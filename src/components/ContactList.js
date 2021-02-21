@@ -17,6 +17,7 @@ const ContactList = (props) => {
 
     return (
         <div>
+            {console.log(props)}
             {contacts.map(({_id, name, email, subject, message}) => (
                 <div className="contact-display" key={_id}>
                     <div className="delete-contact" onClick={() => {onDeleteClick(_id)}}>&times;</div>
@@ -53,11 +54,13 @@ const ContactList = (props) => {
 
 ContactList.propTypes = {
     getContacts: PropTypes.func.isRequired,
-    contact: PropTypes.object.isRequired
+    contact: PropTypes.object.isRequired,
+    token: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
-    contact: state.contact
+    contact: state.contact,
+    token: state.auth.token
 })
 
 export default connect(mapStateToProps, {getContacts, deleteContact})(ContactList)
