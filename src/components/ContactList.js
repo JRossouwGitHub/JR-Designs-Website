@@ -18,7 +18,7 @@ const ContactList = (props) => {
 
     return (
         <div>
-            {props.token ? (<>
+            {!props.token ? (<>
                 {props.history.push(http.http)}
             </>) : (<>
                 {contacts.map(({_id, name, email, subject, message}) => (
