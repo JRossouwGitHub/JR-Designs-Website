@@ -3,6 +3,7 @@ import {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {getContacts, deleteContact} from '../actions/contactActions'
 import PropTypes from 'prop-types'
+import http from '../../config/route'
 
 const ContactList = (props) => {
     useEffect(() => {
@@ -17,37 +18,41 @@ const ContactList = (props) => {
 
     return (
         <div>
-            {console.log(props)}
-            {contacts.map(({_id, name, email, subject, message}) => (
-                <div className="contact-display" key={_id}>
-                    <div className="delete-contact" onClick={() => {onDeleteClick(_id)}}>&times;</div>
-                    <div>
-                        <p>
-                            <label>Name: </label>
-                            {name}
-                        </p>
+            {props.token ? (<>
+                {props.history.push(http.http)}
+            </>) : (<>
+                {contacts.map(({_id, name, email, subject, message}) => (
+                    <div className="contact-display" key={_id}>
+                        <div className="delete-contact" onClick={() => {onDeleteClick(_id)}}>&times;</div>
+                        <div>
+                            <p>
+                                <label>Name: </label>
+                                {name}
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <label>Email: </label>
+                                {email}
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <label>Subject: </label>
+                                {subject}
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <label>Message: </label> <br />
+                                {message}
+                            </p>
+                        </div>
+                        <br />
                     </div>
-                    <div>
-                        <p>
-                            <label>Email: </label>
-                            {email}
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            <label>Subject: </label>
-                            {subject}
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            <label>Message: </label> <br />
-                            {message}
-                        </p>
-                    </div>
-                    <br />
-                </div>
-            ))}
+                ))}
+            </>)}
+            
         </div>
     )
 }
